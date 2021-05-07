@@ -72,12 +72,14 @@ const onSubmit = async () => {
   const passwordVal = password.value;
   const usernameVal = username.value;
   const nameVal = name.value;
+
   const params = {
     email: emailVal,//メールアドレスの値
     password: passwordVal,//パスワードの値
     username: usernameVal,//ユーザー名の値
     name: nameVal//名前の値
   }
+
   const results = await validate(params);
   if (results[0].success && results[1].success && results[2].success && results[3].success) {
     //バリデーション成功時 paramsの中身が要件を満たしていたら
