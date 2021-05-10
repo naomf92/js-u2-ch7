@@ -73,11 +73,18 @@ const onSubmit = async () => {
   const usernameVal = username.value;
   const nameVal = name.value;
 
+  // const params = {
+  //   email: emailVal,//メールアドレスの値
+  //   password: passwordVal,//パスワードの値
+  //   username: usernameVal,//ユーザー名の値
+  //   name: nameVal//名前の値
+  // }
+
   const params = {
-    email: emailVal,//メールアドレスの値
-    password: passwordVal,//パスワードの値
-    username: usernameVal,//ユーザー名の値
-    name: nameVal//名前の値
+    emailVal,
+    passwordVal,
+    usernameVal,
+    nameVal
   }
 
   const results = await validate(params);

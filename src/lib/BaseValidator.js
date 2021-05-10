@@ -18,4 +18,18 @@ export default class {
       }
     });
   }
+  _errorResult(message) {
+    return new Promise((resolve,reject) => {
+      if (a) {
+        resolve();
+      } else {
+        reject({
+          success: false,
+          type: this.type, //'emailなどのタイプ',
+          message: 与えられたメッセージ
+        })
+      }
+    });
+
+  }
 }
