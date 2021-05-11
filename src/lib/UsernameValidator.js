@@ -21,11 +21,12 @@ export default class extends BaseValidator {
     if(valid) {
       return Promise.resolve()
     } else {
-      return Promise.reject({
-        success: false,
-        type: this.type,
-        message: `${this.typeName}には半角英数字、@_-.の記号を使用してください。`
-      })
+      return Promise.reject(this._errorResult(`${this.typeName}には半角英数字、@_-.の記号を使用してください。`))
+      // return Promise.reject({
+      //   success: false,
+      //   type: this.type,
+      //   message: `${this.typeName}には半角英数字、@_-.の記号を使用してください。`
+      // })
     }
 
   }

@@ -10,26 +10,15 @@ export default class {
       if (!!this.val) {
         resolve(this);
       } else {
-        reject({
-          success: false,
-          message: `${this.typeName}は必須です。`,
-          type: this.type
-        })
+        reject(this._errorResult(`${this.typeName}は必須です。`))
       }
     });
   }
   _errorResult(message) {
-    return new Promise((resolve,reject) => {
-      if (a) {
-        resolve();
-      } else {
-        reject({
-          success: false,
-          type: this.type, //'emailなどのタイプ',
-          message: 与えられたメッセージ
-        })
-      }
-    });
-
+    return {
+      success: false,
+      type: this.type,
+      message
+    }
   }
 }
