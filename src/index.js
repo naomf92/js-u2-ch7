@@ -80,6 +80,7 @@ const onSubmit = async () => {
   //   name: nameVal//名前の値
   // }
 
+  // 👇 分割代入の値をよく見ると、上記のDOM取得の値になっています
   const params = {
     emailVal,
     passwordVal,
