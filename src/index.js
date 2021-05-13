@@ -73,6 +73,7 @@ const onSubmit = async () => {
   const usernameVal = username.value;
   const nameVal = name.value;
 
+  //↓とりあえずもともとの形に戻したんですが分割代入での書き方がわかりません(;_;)
   const params = {
     email: emailVal,//メールアドレスの値
     password: passwordVal,//パスワードの値
