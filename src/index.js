@@ -73,20 +73,20 @@ const onSubmit = async () => {
   const usernameVal = username.value;
   const nameVal = name.value;
 
-  // const params = {
-  //   email: emailVal,//メールアドレスの値
-  //   password: passwordVal,//パスワードの値
-  //   username: usernameVal,//ユーザー名の値
-  //   name: nameVal//名前の値
-  // }
+  const params = {
+    email: emailVal,//メールアドレスの値
+    password: passwordVal,//パスワードの値
+    username: usernameVal,//ユーザー名の値
+    name: nameVal//名前の値
+  }
 
   // 👇 分割代入の値をよく見ると、上記のDOM取得の値になっています
-  const params = {
-    emailVal,
-    passwordVal,
-    usernameVal,
-    nameVal
-  }
+  // const params = {
+  //   emailVal,
+  //   passwordVal,
+  //   usernameVal,
+  //   nameVal
+  // }
 
   const results = await validate(params);
   if (results[0].success && results[1].success && results[2].success && results[3].success) {

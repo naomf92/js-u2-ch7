@@ -21,11 +21,7 @@ export default class extends BaseValidator {
     if(valid) {
       return Promise.resolve()
     } else {
-      return Promise.reject({
-        success: false,
-        type: this.type,
-        message: `${this.typeName}には半角英数字のみ利用可能です。また名字と名前をスペースで書く必要があります。`
-      })
+      return Promise.reject(super._errorResult(`${this.typeName}には半角英数字のみ利用可能です。また名字と名前をスペースで書く必要があります。`))
     }
   }
 
