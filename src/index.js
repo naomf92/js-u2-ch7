@@ -64,30 +64,28 @@ const signup = (params) => {
 
 const onSubmit = async () => {
   await removeErrors()
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
-  const username = document.getElementById('username');
-  const name = document.getElementById('name');
-  const emailVal = email.value;
-  const passwordVal = password.value;
-  const usernameVal = username.value;
-  const nameVal = name.value;
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const passwordEl = document.getElementById('password');
+  const usernameEl = document.getElementById('username');
+  const name = nameEl.value;
+  const email = emailEl.value;
+  const password = passwordEl.value;
+  const username = usernameEl.value;
 
-  //↓とりあえずもともとの形に戻したんですが分割代入での書き方がわかりません(;_;)
-  const params = {
-    email: emailVal,//メールアドレスの値
-    password: passwordVal,//パスワードの値
-    username: usernameVal,//ユーザー名の値
-    name: nameVal//名前の値
-  }
-
-  // 👇 分割代入の値をよく見ると、上記のDOM取得の値になっています
   // const params = {
-  //   emailVal,
-  //   passwordVal,
-  //   usernameVal,
-  //   nameVal
+  //   name: name,//名前の値
+  //   email: email,//メールアドレスの値
+  //   password: password,//パスワードの値
+  //   username: username//ユーザー名の値
   // }
+
+  const params = {
+    name,
+    email,
+    password,
+    username
+  }
 
   const results = await validate(params);
   if (results[0].success && results[1].success && results[2].success && results[3].success) {
