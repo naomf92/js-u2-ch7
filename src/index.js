@@ -81,10 +81,10 @@ const onSubmit = async () => {
   // }
 
   const params = {
-    name,
-    email,
-    password,
-    username
+    emailVal,// email
+    passwordVal,// password
+    usernameVal,// username
+    nameVal// name
   }
 
   const results = await validate(params);
