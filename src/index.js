@@ -64,14 +64,14 @@ const signup = (params) => {
 
 const onSubmit = async () => {
   await removeErrors()
-  const name = document.getElementById('name');
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
-  const username = document.getElementById('username');
-  const nameVal = name.value;
-  const emailVal = email.value;
-  const passwordVal = password.value;
-  const usernameVal = username.value;
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const passwordEl = document.getElementById('password');
+  const usernameEl = document.getElementById('username');
+  const name = nameEl.value;
+  const email = emailEl.value;
+  const password = passwordEl.value;
+  const username = usernameEl.value;
 
   // const params = {
   //   name: name,//名前の値
@@ -80,11 +80,18 @@ const onSubmit = async () => {
   //   username: username//ユーザー名の値
   // }
 
+  // const params = {
+  //   emailVal,// email
+  //   passwordVal,// password
+  //   usernameVal,// username
+  //   nameVal// name
+  // }
+
   const params = {
-    emailVal,// email
-    passwordVal,// password
-    usernameVal,// username
-    nameVal// name
+    email,
+    password,
+    username,
+    name
   }
 
   const results = await validate(params);
